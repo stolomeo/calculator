@@ -4,11 +4,13 @@ const numbers = document.querySelectorAll('.number');
 const operations = document.querySelectorAll('.operator');
 const equalsBtn = document.querySelector('#equals');
 const clearBtn = document.querySelector('#clear');
+const deleteBtn = document.querySelector('#delete');
 
 let previousDisplayNum = '';
 let currentDisplayNum = '';
 let lastOperator = '';
 let result = null;
+let hasDecimal = false;
 
 numbers.forEach(number => {
     number.addEventListener('click', (e) => {
@@ -25,6 +27,7 @@ numbers.forEach(number => {
 operations.forEach(operator => {
     operator.addEventListener('click', (e) => {
         if (!currentDisplayNum) return;
+        hasDecimal = false;
         const operationName = e.target.textContent;
         if (currentDisplayNum && previousDisplayNum && lastOperator) {
             operate(lastOperator, previousDisplayNum, currentDisplayNum);
@@ -38,6 +41,7 @@ operations.forEach(operator => {
 
 equalsBtn.addEventListener('click', (e) => {
     if (!currentDisplayNum || !previousDisplayNum) return;
+    hasDecimal = false;
     operate(lastOperator, previousDisplayNum, currentDisplayNum);
     clearDisplay();
     currentDisplay.textContent = result;
@@ -69,6 +73,12 @@ function operate(lastOperator, a, b) {
         
     }
 }
+
+deleteBtn.addEventListener('click', (e) => {
+    currentDisplayNum = currentDisplayNum.toString().slice(0,-1);
+    currentDisplay.textContent = currentDisplay.textContent.toString().slice(0,-1);
+    console.log(currentDisplay);
+})
 
 
 function clearDisplay (opName = '') {

@@ -34,6 +34,13 @@
     grid-template-columns: repeat(4, 1fr);
     width: 300px;
     height: 300px;
+    gap: 10px;
+}
+#clear {
+    grid-column: span 2;
+}
+#delete {
+    grid-column: span 2;
 }
 button {
     border-radius: 10px;

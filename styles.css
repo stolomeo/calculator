@@ -12,17 +12,19 @@
     align-items: center;
     gap: 30px;
     padding: 16px;
+    margin-top: 50px;
 }
 .display {
     width: 300px;
     height: 75px;
+    background: rgb(255 255 255 / 80%);
     border: solid black 2px;
     border-radius: 10px;
     box-sizing: border-box;
-    background-color: white;
     font-size: 40px;
     text-align: end;
     overflow: hidden;
+    padding: 2px;
 }
 .previous {
     opacity: .4;
@@ -38,15 +40,39 @@
 }
 #clear {
     grid-column: span 2;
+    background-color: rgb(55 231 255 / 70%);
+}
+
+#clear:hover {
+    background-color: rgba(2, 210, 238, 0.9)
+
 }
 #delete {
     grid-column: span 2;
+    background-color: rgb(102 255 160 / 70%);
+}
+#delete:hover {
+    background-color: rgb(102 255 160 / 90%);
+}
+.operator {
+    background-color: rgb(255 233 191 / 70%);
+}
+.operator:hover {
+    background-color: rgba(245 181 61 / 90%);
+
+}
+#equals {
+    background-color: rgb(102 255 160 / 70%);
+}
+#equals:hover {
+    background-color: rgb(102 255 160 / 70%);
 }
 button {
     border-radius: 10px;
     cursor: pointer;
-    background-color: rgba(255, 255, 255, .7);
+    background-color: rgba(255 255 255 / 70%);
     font-size: 20px;
+    font-weight: bold;
 }
 button:hover {
     background-color: rgba(255, 255, 255, .9)
